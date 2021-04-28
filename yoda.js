@@ -1,5 +1,5 @@
 exports.action = (data)=>{
-var testphrase = require(path.resolve('%CD%', './plugins/test/testphrase').replace('\\%CD%', '')) ;
+var testphrase = require(path.resolve('%CD%', './plugins/yoda/testphrase').replace('\\%CD%', '')) ;
 
 var reco=JarvisIA.reco
 

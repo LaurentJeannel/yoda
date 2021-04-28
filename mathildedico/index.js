@@ -6,7 +6,7 @@ lecture=function(queryphraser){//console.log('le queryphraser '+queryphraser+que
 //queryphraser=queryphraser.trim()
 queryphraser=queryphraser.replace(new RegExp("\\b" + "'" + "\\b","gi")," ");
 queryphraser=queryphraser.replace(new RegExp('[^a-z A-Z 0-9 êéèàçâäùïô]', 'ig')," ")
-queryphraser=queryphraser.split(" ")//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+queryphraser=queryphraser.toLowerCase().split(" ")//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 fs = require('fs')
 path = require('path')
@@ -17,23 +17,23 @@ request = require('request');cheerio = require('cheerio');
 		queryphraser2=""
 		//fs.readFile(filename, "utf8", function (err, data) {
 
-	  filesnom = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/nom.json' ).replace('\\%CD%', ''),'utf-8') ;
+	  filesnom = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/nom.json' ).replace('\\%CD%', ''),'utf-8') .toLowerCase();
 	//console.log(filesnom)
-	  filesadverbe = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/adverbe.json').replace('\\%CD%', ''),'utf-8') 
+	  filesadverbe = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/adverbe.json').replace('\\%CD%', ''),'utf-8').toLowerCase() 
         
-      filesverbe = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/verbe.json').replace('\\%CD%', ''),'utf-8')
+      filesverbe = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/verbe.json').replace('\\%CD%', ''),'utf-8').toLowerCase()
 	
-	  filesadjectif = fs.readFileSync(path.resolve('%CD%', './plugins/yoda/mathildedico/memoire/adjectif.json').replace('\\%CD%', ''),'utf-8')
+	  filesadjectif = fs.readFileSync(path.resolve('%CD%', './plugins/yoda/mathildedico/memoire/adjectif.json').replace('\\%CD%', ''),'utf-8').toLowerCase()
 	
-	  filespréposition = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/préposition.json').replace('\\%CD%', ''),'utf-8')
+	  filespréposition = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/préposition.json').replace('\\%CD%', ''),'utf-8').toLowerCase()
    
-	  filesarticle = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/article.json').replace('\\%CD%', ''),'utf-8')  
+	  filesarticle = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/article.json').replace('\\%CD%', ''),'utf-8').toLowerCase()  
     
-      filespronom = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/pronom.json' ).replace('\\%CD%', ''),'utf-8')
+      filespronom = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/pronom.json' ).replace('\\%CD%', ''),'utf-8').toLowerCase()
 
-      filesconjonction = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/conjonction.json' ).replace('\\%CD%', ''),'utf-8')
+      filesconjonction = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/conjonction.json' ).replace('\\%CD%', ''),'utf-8').toLowerCase()
 
-      filesinconnu = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/inconnu.json' ).replace('\\%CD%', ''),'utf-8')
+      filesinconnu = fs.readFileSync(path.resolve('%CD%','./plugins/yoda/mathildedico/memoire/inconnu.json' ).replace('\\%CD%', ''),'utf-8').toLowerCase()
 ////////////////////////////////////////////////////////
               jsonStrnom = JSON.parse(filesnom);
 			  jsonStradverbe = JSON.parse(filesadverbe);
